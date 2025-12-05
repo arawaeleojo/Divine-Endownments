@@ -1,0 +1,592 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Divine Endowments — Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Outfit font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --teal: #049385;
+            --red: #E4312B;
+            --deep-red: #C32420;
+            --charcoal: #111111;
+            --off-white: #F9F9F9;
+            --white: #FFFFFF;
+            --max-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--charcoal);
+            background: var(--white);
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 1rem 1rem;
+        }
+
+        .navbar-brand img {
+            height: 48px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--charcoal) !important
+        }
+
+        .nav-link:hover {
+            color: var(--teal) !important
+        }
+
+        .cart-btn {
+            font-size: 1.1rem;
+            color: var(--charcoal)
+        }
+
+        /* Sticky shadow */
+        .navbar.sticky-top.scrolled {
+            box-shadow: 0 6px 18px rgba(17, 17, 17, 0.08);
+            backdrop-filter: blur(2px);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            background-color: var(--off-white);
+            align-items: center;
+            padding: 4rem 0
+        }
+
+        .hero .hero-left {
+            padding-right: 2rem
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+            line-height: 1.02;
+            margin-bottom: 0.6rem;
+            font-weight: 700;
+            color: var(--charcoal)
+        }
+
+        .hero p.lead {
+            color: #444;
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            border: 0;
+            padding: 0.7rem 1.1rem;
+            font-weight: 600
+        }
+
+        .btn-outline-teal {
+            border: 2px solid var(--teal);
+            color: var(--teal);
+            padding: 0.56rem 1rem;
+            font-weight: 600
+        }
+
+        .hero-image {
+            position: relative;
+            border: 5px solid var(--charcoal);
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(8, 183, 166, 0.18) 0%, rgba(255, 255, 255, 0) 40%);
+        }
+
+        /* Collections */
+        .collections .card {
+            border: 0;
+            border-radius: 8px;
+            overflow: hidden
+        }
+
+        .collections .card img {
+            height: 280px;
+            object-fit: cover
+        }
+
+        .collections .card-title {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.25);
+            padding: 0.35rem 0.6rem;
+            border-radius: 4px
+        }
+
+        /* Products grid */
+        .product-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid rgba(17, 17, 17, 0.05)
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover
+        }
+
+        .product-meta {
+            padding: 0.8rem
+        }
+
+        .price {
+            font-weight: 700
+        }
+
+        /* Story */
+        .story {
+            padding: 3rem 0
+        }
+
+        /* Gallery preview */
+        .gallery-scroll {
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            padding-bottom: 0.5rem
+        }
+
+        .gallery-scroll img {
+            height: 200px;
+            width: 320px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+
+        /* Testimonials */
+        .testimonial {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1rem;
+            border: 1px solid rgba(17, 17, 17, 0.06)
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(180deg, var(--teal), var(--teal));
+            padding: 2rem;
+            border-radius: 8px
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: #f4f4f4;
+            padding: 2.6rem 0
+        }
+
+        footer a {
+            color: #e9e9e9
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 992px) {
+            .hero {
+                padding: 2.5rem 0
+            }
+
+            .hero .hero-left {
+                padding-right: 0
+            }
+
+            .hero-image::after {
+                display: none
+            }
+
+            .hero-image img {
+                height: 360px;
+                object-fit: cover
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="assets/img/logo.PNG" alt="Divine Endowments logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <a class="me-3 text-decoration-none cart-btn" href="#cart" aria-label="Cart"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor"
+                            class="bi bi-bag" viewBox="0 0 16 16">
+                            <path
+                                d="M8 1a2 2 0 0 0-2 2v1H4.5A1.5 1.5 0 0 0 3 5.5v7A1.5 1.5 0 0 0 4.5 14h7A1.5 1.5 0 0 0 13 12.5v-7A1.5 1.5 0 0 0 11.5 4H10V3a2 2 0 0 0-2-2zM6 3a2 2 0 1 1 4 0v1H6V3z" />
+                        </svg></a>
+                    <a class="btn btn-outline-teal" href="#products">Shop Latest</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-left">
+                    <h1>Elevate Your African Style</h1>
+                    <p class="lead">Modern African ready-to-wear pieces crafted with culture and elegance. Thoughtful
+                        details, lasting quality.</p>
+                    <div class="d-flex gap-3">
+                        <a class="btn btn-primary" href="#products">Shop Latest Arrivals</a>
+                        <a class="btn btn-outline-teal" href="#gallery">View Gallery</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image shadow-sm">
+                        <img src="assets/img/hero-image.png" alt="Hero" class="w-100 rounded">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- COLLECTIONS -->
+    <section class="collections py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 class="mb-3" style="font-weight:700">Featured Collections</h2>
+                    <p style="color:#666">Explore curated collections for every occasion.</p>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card position-relative">
+                        <img src="https://images.unsplash.com/photo-1514996937319-344454492b37?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f1a3b2a"
+                            class="card-img-top" alt="Men collection">
+                        <div class="card-body position-absolute bottom-0 start-0 p-0">
+                            <h5 class="card-title ps-3 pb-2 text-white">Men</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card position-relative">
+                        <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09a1c?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b0b4b"
+                            class="card-img-top" alt="Women collection">
+                        <div class="card-body position-absolute bottom-0 start-0 p-0">
+                            <h5 class="card-title ps-3 pb-2 text-white">Women</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card position-relative">
+                        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=3d2b5b"
+                            class="card-img-top" alt="New Arrivals">
+                        <div class="card-body position-absolute bottom-0 start-0 p-0">
+                            <h5 class="card-title ps-3 pb-2 text-white">New Arrivals</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LATEST ARRIVALS -->
+    <section id="products" class="py-5" style="background:var(--off-white)">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h2 style="font-weight:700">Latest Arrivals</h2>
+                    <p style="color:#666">Handpicked new pieces — fresh and ready.</p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- product -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1520975916041-2f91cbdc7e9a?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f"
+                            alt="product">
+                        <div class="product-meta">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="mb-0">Bold Ankara Shirt</h6>
+                                <span class="price">$78</span>
+                            </div>
+                            <p style="color:#666;font-size:0.92rem">Lightweight cotton. Tailored fit.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn btn-sm btn-outline-teal" href="#">View</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- repeat similar product cards (example placeholders) -->
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=7f"
+                            alt="product">
+                        <div class="product-meta">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="mb-0">Embroidered Kaftan</h6>
+                                <span class="price">$120</span>
+                            </div>
+                            <p style="color:#666;font-size:0.92rem">Elegant silhouette. Premium finish.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn btn-sm btn-outline-teal" href="#">View</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1495121605193-b116b5b09a1c?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b0b4b"
+                            alt="product">
+                        <div class="product-meta">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="mb-0">Classic Wrapper Skirt</h6>
+                                <span class="price">$65</span>
+                            </div>
+                            <p style="color:#666;font-size:0.92rem">Versatile. Comfortable.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn btn-sm btn-outline-teal" href="#">View</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="product-card">
+                        <img src="https://images.unsplash.com/photo-1520975916041-2f91cbdc7e9a?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f"
+                            alt="product">
+                        <div class="product-meta">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <h6 class="mb-0">Minimal Blazer</h6>
+                                <span class="price">$150</span>
+                            </div>
+                            <p style="color:#666;font-size:0.92rem">Structured lines. Timeless.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <a class="btn btn-sm btn-outline-teal" href="#">View</a>
+                                <button class="btn btn-sm btn-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BRAND STORY -->
+    <section id="about" class="story container py-5">
+        <div class="row g-4 align-items-center">
+            <div class="col-lg-6">
+                <img src="https://images.unsplash.com/photo-1503342452485-86f7f6b3d5c1?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b"
+                    alt="studio" class="w-100 rounded shadow-sm">
+            </div>
+            <div class="col-lg-6">
+                <h3 style="font-weight:700">African Ready To Wear, Reimagined</h3>
+                <p style="color:#444">Divine Endowments was founded to create elegant, wearable pieces that honour
+                    African heritage while fitting modern wardrobes. We focus on quality fabrics, considered cuts, and
+                    timeless design.</p>
+                <a class="btn btn-outline-teal" href="#">Read Our Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY PREVIEW -->
+    <section id="gallery" class="py-5">
+        <div class="container">
+            <div class="row mb-3">
+                <div class="col-12 text-center">
+                    <h4 style="font-weight:700">Gallery</h4>
+                    <p style="color:#666">A selection of styled shoots and customer photos.</p>
+                </div>
+            </div>
+            <div class="gallery-scroll">
+                <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=1"
+                    alt="gallery">
+                <img src="https://images.unsplash.com/photo-1520975916041-2f91cbdc7e9a?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f"
+                    alt="gallery">
+                <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=7f"
+                    alt="gallery">
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=3d"
+                    alt="gallery">
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-12 text-center">
+                    <h4 style="font-weight:700">What Customers Say</h4>
+                </div>
+            </div>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial mx-auto" style="max-width:760px">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=80&auto=format&fit=crop&ixlib=rb-4.0.3&s=8a"
+                                    class="rounded-circle" width="56" alt="user">
+                                <strong>Amaka J.</strong>
+                            </div>
+                            <p style="color:#555">"Love my kaftan — fits beautifully and the fabric quality is top
+                                notch. Compliments everywhere!"</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="testimonial mx-auto" style="max-width:760px">
+                            <div class="d-flex align-items-center gap-3 mb-2">
+                                <img src="https://images.unsplash.com/photo-1545996124-1b6a34d6c8c9?q=80&w=80&auto=format&fit=crop&ixlib=rb-4.0.3&s=7b"
+                                    class="rounded-circle" width="56" alt="user">
+                                <strong>Tunde R.</strong>
+                            </div>
+                            <p style="color:#555">"Fantastic tailoring and attention to detail. Shipping was fast and
+                                customer service was helpful."</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="py-5">
+        <div class="container">
+            <div class="newsletter mx-auto text-center" style="max-width:820px">
+                <h4 style="font-weight:700">Join the Tribe</h4>
+                <p style="color:#666">Get 10% off your first order and be the first to hear about drops and exclusive
+                    offers.</p>
+                <form class="row g-2 justify-content-center">
+                    <div class="col-auto" style="flex:0 0 56%">
+                        <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+                    </div>
+                    <div class="col-auto">
+                        <button class="btn btn-primary btn-lg" type="submit">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <img src="assets/img/logo.PNG" alt="logo" style="height:48px">
+                    <p style="color:#ccc;margin-top:0.5rem">African Ready to Wear — crafted with care.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 style="color:#fff">Shop</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Men</a></li>
+                        <li><a href="#">Women</a></li>
+                        <li><a href="#">New Arrivals</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6 style="color:#fff">Company</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Terms</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <h6 style="color:#fff">Contact</h6>
+                    <p style="color:#ccc">hello@divineendowments.com<br>+234 800 000 0000</p>
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-sm btn-outline-light" href="#">Instagram</a>
+                        <a class="btn btn-sm btn-outline-light" href="#">Facebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center" style="color:#bbb">&copy; <span id="year"></span> Divine Endowments. All
+                    rights reserved.</div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Insert current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar shrink on scroll
+        const nav = document.getElementById('mainNav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>    

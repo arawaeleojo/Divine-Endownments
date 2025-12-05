@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divine Endowments | African Ready-to-Wear & Bespoke Fashion</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Outfit font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-dark: #07130e;
+            --primary-green: #049385;
+            --accent-gold: #C32420;
+            --accent-cream: #f8f5f0;
+            --text-dark: #1a1a1a;
+            --text-light: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-dark);
+            overflow-x: hidden;
+            background-color: #fff;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: 'Outfit', serif;
+            font-weight: 300;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            background-color: rgba(218, 218, 218, 0.98);
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+        /* ACTIVE & HOVER UNDERLINE */
+        .navbar .nav-link {
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .navbar .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            width: 100%;
+        }
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-gold);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding-top: 120px; /* Adjust between 90px – 140px if needed */
+            height: 100vh;
+            background: linear-gradient(rgba(7, 19, 14, 0.8), rgba(7, 19, 14, 0.6)),
+                /* TODO: Replace this with a key hero image from your site, e.g. a storefront or model shot */
+                url('assets/img/hero4.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            opacity: 0;
+            animation: fadeInUp 1s 0.3s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 650px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.6s forwards;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: white;
+            border: none;
+            padding: 0.9rem 2.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            border-radius: 0;
+            transition: all 0.3s;
+            opacity: 0;
+            animation: fadeInUp 1s 0.9s forwards;
+        }
+
+        .btn-gold:hover {
+            background-color: #a21c19;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Floating Elements Animation */
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(201, 168, 106, 0.1);
+            z-index: 1;
+        }
+
+        .floating-1 {
+            width: 80px;
+            height: 80px;
+            top: 20%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-2 {
+            width: 120px;
+            height: 120px;
+            bottom: 15%;
+            right: 10%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        /* Brand Philosophy */
+        .philosophy-section {
+            padding: 6rem 0;
+            background-color: var(--accent-cream);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+            display: block; /* changed from inline-block */
+            width: 100%;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px; /* fixed width to center perfectly */
+            height: 3px;
+            background-color: var(--accent-gold);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%); /* centers the underline */
+        }
+
+
+        .philosophy-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .philosophy-image {
+            height: 600px;
+            /* TODO: Replace this with a real Divine Endowments campaign / store image */
+            background: url('assets/img/gal2.PNG');
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+
+        .philosophy-image:hover {
+            transform: scale(1.03);
+        }
+
+        /* Featured Collections */
+        .collections-section {
+            padding: 6rem 0;
+        }
+
+        .collection-card {
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .collection-image {
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.7s;
+        }
+
+        .collection-card:hover .collection-image {
+            transform: scale(1.1);
+        }
+
+        .collection-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(7, 19, 14, 0.95), transparent);
+            color: white;
+            padding: 2rem;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .collection-card:hover .collection-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .collection-title {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Product Showcase */
+        .product-showcase {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .product-card {
+            background: white;
+            overflow: hidden;
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            height: 300px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-green);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-price {
+            font-weight: 600;
+            color: var(--primary-green);
+            font-size: 1.1rem;
+        }
+
+        /* Lookbook */
+        .lookbook-section {
+            padding: 6rem 0;
+            background-color: var(--primary-dark);
+            color: white;
+        }
+
+        .lookbook-slider {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .lookbook-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .lookbook-slide.active {
+            opacity: 1;
+        }
+
+        .lookbook-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .lookbook-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .lookbook-dot.active {
+            background-color: var(--accent-gold);
+        }
+
+        /* Newsletter */
+        .newsletter-section {
+            padding: 5rem 0;
+            background-color: var(--accent-cream);
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-control-custom {
+            border-radius: 0;
+            border: 1px solid #ddd;
+            padding: 0.9rem 1.2rem;
+            font-size: 1rem;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 0.2rem rgba(201, 168, 106, 0.25);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cream);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin-right: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .collection-card {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .philosophy-image {
+                height: 300px;
+                margin-top: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="assets/img/logo.png" alt="Divine Endowments Logo">
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/about.html">About</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/gallery.html">Collections</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="pages/contact.html">Contact</a>
+                    </li>
+    
+                    <!-- CART -->
+                    <li class="nav-item ms-2">
+                        <a class="nav-link cart-icon" href="#">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">3</span>
+                        </a>
+                    </li>
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+
+        <div class="container hero-content">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="hero-title">The Place of Divine Endowments</h1>
+                    <p class="hero-subtitle">
+                        Discover African ready-to-wear and bespoke pieces that deliver fitting at its very best. From
+                        gowns and kaftans to corporate shirts and native wears, Divine Endowments dresses men and women
+                        who want to look refined, confident and effortlessly stylish.
+                    </p>
+                    <a href="#shop" class="btn btn-gold">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Philosophy / Our Story -->
+    <section class="philosophy-section" id="story">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">About Divine Endowments</h2>
+                    <p class="philosophy-text">
+                        Divine Endowments Limited is one of the leading and fastest-growing fashion houses in Nigeria,
+                        with a clear mission: to deliver perfect fitting in bespoke and ready-to-wear garments for
+                        today’s discerning customer. From our base in Ikeja and airport outlets, we serve clients who
+                        want premium African fashion that feels as good as it looks.
+                        :contentReference[oaicite:0]{index=0}
+                    </p>
+                    <p class="philosophy-text mt-4">
+                        We specialise in African designer gowns, kaftans, blouses, trousers and more for both men and
+                        women. Every piece is crafted with attention to detail, neat finishing and quality fabrics,
+                        whether you’re dressing for owambe, travel, the boardroom or casual days out.
+                        :contentReference[oaicite:1]{index=1}
+                    </p>
+                    <p class="philosophy-text mt-4">
+                        Over the years, Divine Endowments has become a trusted name in Lagos and beyond, redefining
+                        African ready-wear and making contemporary, well-tailored pieces accessible to everyone.
+                    </p>
+                    <a href="#collections" class="btn btn-outline-dark mt-4">Explore Collections
+                        <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="philosophy-image mt-4 mt-lg-0"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="collections-section" id="collections">
+        <div class="container">
+            <h2 class="section-title text-center">Featured Collections</h2>
+            <p class="text-center text-muted mb-5">
+                Signature Divine Endowments looks for every occasion – owambe, corporate, travel and casual.
+            </p>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="collection-card">
+                        <!-- TODO: Replace with a real kaftan / senator look from your site -->
+                        <div class="collection-image"
+                            style="background-image: url('assets/img/gal8.PNG')">
+                        </div>
+                        <div class="collection-overlay">
+                            <h3 class="collection-title">Men’s Kaftans & Senator Wears</h3>
+                            <p>Perfectly tailored kaftans, agbada and senator styles that bring out your royal
+                                presence at work, church and events.</p>
+                            <a href="#shop" class="btn btn-sm btn-gold mt-3">Shop Men’s Collection</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="collection-card">
+                        <!-- TODO: Replace with a real gown / dress image from Divine Endowments -->
+                        <div class="collection-image"
+                            style="background-image: url('assets/img/gal1.PNG')">
+                        </div>
+                        <div class="collection-overlay">
+                            <h3 class="collection-title">Women’s Gowns & Ready-Wear</h3>
+                            <p>Elegant African designer gowns, dresses and two-piece sets that flatter your figure and
+                                move with grace.</p>
+                            <a href="#shop" class="btn btn-sm btn-gold mt-3">Shop Women’s Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase / Popular Products -->
+    <section class="product-showcase" id="shop">
+        <div class="container">
+            <h2 class="section-title text-center">Popular Picks</h2>
+            <p class="text-center text-muted mb-5">
+                A curated selection of looks your customers already love. Replace these with your current top sellers.
+            </p>
+
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <!-- TODO: Replace with product image from your site -->
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal8.PNG')">
+                            <span class="product-badge">Bestseller</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Classic Senator Set</h3>
+                            <p class="text-muted">Neatly tailored senator wear with clean lines and sharp finishing.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <!-- TODO: Replace with product image from your site -->
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal2.PNG')">
+                            <span class="product-badge">Customer Favourite</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Ankara Designer Gown</h3>
+                            <p class="text-muted">Statement gown that turns heads at every owambe and special event.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <!-- TODO: Replace with product image from your site -->
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal3.PNG')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Ladies Two-Piece Set</h3>
+                            <p class="text-muted">Chic blouse and trouser combo for office, travel and weekends.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="product-card">
+                        <!-- TODO: Replace with product image from your site -->
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal6.PNG')">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Agbada / Occasional Wear</h3>
+                            <p class="text-muted">Grand pieces for weddings, ceremonies and high-profile outings.</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- You can duplicate more cards here once you have the real product list -->
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Section (Green Background) -->
+    <section class="collections-section" id="new-arrivals"
+        style="background-color: var(--primary-green); padding-top: 6rem; padding-bottom: 6rem;">
+        <div class="container">
+            <h2 class="section-title text-center" style="color: white;">New Arrivals</h2>
+            <p class="text-center mb-5" style="color: #ccc;">
+                Discover our latest ready-to-wear pieces crafted with premium fabrics and perfect tailoring.
+            </p>
+    
+            <div class="row g-4">
+    
+                <!-- Item 1 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal1.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Ladies 2-Piece Set</h3>
+                            <p class="text-muted">Premium tailoring</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Item 2 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal2.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Designer Gown</h3>
+                            <p class="text-muted">Elegant African wear</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Item 3 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal3.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Men’s Senator</h3>
+                            <p class="text-muted">Sharp and fitted</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Item 4 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal4.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Agbada Set</h3>
+                            <p class="text-muted">Grand traditional wear</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Item 5 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal5.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Men’s Kaftan</h3>
+                            <p class="text-muted">Premium embroidery</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Item 6 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal6.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Ladies Dress</h3>
+                            <p class="text-muted">Soft & flowing fabric</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Item 7 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal7.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">2-Piece Men’s Set</h3>
+                            <p class="text-muted">Simple & classy</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Item 8 -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="product-card" style="background-color: white;">
+                        <div class="product-image"
+                            style="background-image: url('assets/img/gal8.PNG');">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Elegant Gown</h3>
+                            <p class="text-muted">For classy outings</p>
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <span class="product-price">₦ Contact for Price</span>
+                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section" style="padding: 6rem 0; background-color: #ffffff;">
+        <div class="container">
+            <h2 class="section-title text-center">What Our Customers Say</h2>
+            <p class="text-center text-muted mb-5">
+                Stories from clients who love the Divine Endowments experience.
+            </p>
+    
+            <div class="row g-4">
+    
+                <!-- Testimonial 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 shadow-sm h-100 rounded" style="background-color: #f8f8f8;">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/90?img=12" alt="Customer" class="rounded-circle me-3" width="60"
+                                height="60">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <small class="text-muted">Lagos, Nigeria</small>
+                            </div>
+                        </div>
+                        <p class="text-muted">
+                            “Divine Endowments clothing is top-notch! The attention to detail and fit is perfect. I got my
+                            gown and it was exactly as described.”
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Testimonial 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 shadow-sm h-100 rounded" style="background-color: #f8f8f8;">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/90?img=5" alt="Customer" class="rounded-circle me-3" width="60"
+                                height="60">
+                            <div>
+                                <h5 class="mb-0">Michael Ade</h5>
+                                <small class="text-muted">Abuja, Nigeria</small>
+                            </div>
+                        </div>
+                        <p class="text-muted">
+                            “The senator wear I ordered fits like it was tailored just for me. The fabric is rich and
+                            styling is premium. Highly recommended.”
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Testimonial 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="p-4 shadow-sm h-100 rounded" style="background-color: #f8f8f8;">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="https://i.pravatar.cc/90?img=32" alt="Customer" class="rounded-circle me-3" width="60"
+                                height="60">
+                            <div>
+                                <h5 class="mb-0">Amina Bello</h5>
+                                <small class="text-muted">Kano, Nigeria</small>
+                            </div>
+                        </div>
+                        <p class="text-muted">
+                            “I love how Divine Endowments pieces make me feel confident and beautiful. Their service is fast
+                            and reliable too!”
+                        </p>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </div>
+    </section>
+
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <h2 class="section-title">Stay in Style</h2>
+            <p class="mb-4">
+                Join the Divine Endowments community to get updates on new drops, airport store offers and styling tips.
+            </p>
+
+            <div class="newsletter-form">
+                <form id="subscribeForm">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control form-control-custom" placeholder="Your email address"
+                            required>
+                        <button class="btn btn-gold" type="submit">Subscribe</button>
+                    </div>
+                    <div class="form-text">No spam. Only premium fashion updates from Divine Endowments.</div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Divine Endowments</h3>
+                    <p>
+                        In-store and online retailer of African designer gowns, kaftans, blouses, trousers and more –
+                        delivering fitting at its very best in bespoke and ready-to-wear garments.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <!-- Replace with real links -->
+                        <a href="https://www.instagram.com/divineendowments/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/DivineendowmentsNG/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/Divineendowment" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shop">All Products</a></li>
+                        <li><a href="#collections">Men’s Wears</a></li>
+                        <li><a href="#collections">Women’s Wears</a></li>
+                        <li><a href="#collections">Gowns & Dresses</a></li>
+                        <li><a href="#collections">Kaftans & Native</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#story">About Us</a></li>
+                        <li><a href="#">Owambe by Divine Endowments</a></li>
+                        <li><a href="#">Uniforms by Divine Endowments</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">Visit Our Stores</h4>
+                    <p>
+                        <strong>Head Office / Flagship Store</strong><br>
+                        33 Toyin Street (2nd Floor), Ikeja, Lagos, Nigeria.
+                    </p>
+                    <p class="mt-2">
+                        <strong>Airport Locations</strong><br>
+                        Duty Free Shop – Lagos International Airport (MMA)<br>
+                        MMA2 & GAT Local Airport, Ikeja, Lagos.
+                    </p>
+                    <p class="mt-2">
+                        <strong>Contact</strong><br>
+                        info@divineendowments.com<br>
+                        0814 700 6000, 0818 414 1414, 0809 903 3337
+                    </p>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>&copy; 2025 Divine Endowments Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Lookbook slider
+        const slides = document.querySelectorAll('.lookbook-slide');
+        const dots = document.querySelectorAll('.lookbook-dot');
+        let currentSlide = 0;
+
+        function showSlide(n) {
+            // Reset all slides and dots
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Set new active slide and dot
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+            });
+        });
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            showSlide(currentSlide + 1);
+        }, 5000);
+
+        // Newsletter form submission
+        document.getElementById('subscribeForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = this.querySelector('input[type="email"]').value;
+
+            alert(`Thank you for subscribing with: ${email}\nWelcome to Divine Endowments!`);
+            this.reset();
+        });
+
+        // Add to cart animation
+        const addToCartButtons = document.querySelectorAll('.btn-outline-dark');
+        const cartCount = document.querySelector('.cart-count');
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
+                this.classList.remove('btn-outline-dark');
+                this.classList.add('btn-success');
+
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + 1;
+
+                setTimeout(() => {
+                    this.innerHTML = 'View Details';
+                    this.classList.remove('btn-success');
+                    this.classList.add('btn-outline-dark');
+                }, 2000);
+            });
+        });
+
+        // Initialize animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.collection-card, .product-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+
+</html>

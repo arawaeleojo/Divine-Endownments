@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us | Divine Endowments</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-dark: #07130e;
+            --primary-green: #049385;
+            --accent-gold: #C32420;
+            --accent-cream: #faf7f2;
+            --section-grey: #f3f4f6;
+            --text-dark: #1a1a1a;
+            --text-light: #6c757d;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 0.8rem 0;
+            background-color: rgba(218, 218, 218, 0.98);
+        }
+
+        .navbar-brand img {
+            height: 60px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-dark) !important;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+        /* ACTIVE & HOVER UNDERLINE */
+        .navbar .nav-link {
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .navbar .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            width: 100%;
+        }
+
+
+        .cart-icon {
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--accent-gold);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* HERO */
+        .hero-section {
+            padding-top: 200px;
+            padding-bottom: 200px;
+            background: linear-gradient(rgba(7, 19, 14, 0.75), rgba(7, 19, 14, 0.82)),
+                url('../assets/img/hero2.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section h1 {
+            font-size: 3.2rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-section p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: #e5e7eb;
+        }
+
+        /* SECTION TITLES */
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 720px;
+            margin: 0.5rem auto 2.5rem auto;
+            color: var(--text-light);
+        }
+
+        /* CONTACT SECTION */
+        .contact-wrapper {
+            padding: 4.5rem 0 4rem 0;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            padding: 1.8rem 1.7rem;
+            border-radius: 14px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+            height: 100%;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+        }
+
+        .contact-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+            margin-bottom: 0.4rem;
+            color: var(--text-light);
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(4, 147, 133, 0.08);
+            color: var(--primary-green);
+            margin-right: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-phone {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* FORM */
+        .contact-form-card {
+            background: #ffffff;
+            padding: 2rem 1.8rem;
+            border-radius: 16px;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+            border: 1px solid rgba(148, 163, 184, 0.25);
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 0.9rem 1rem;
+            border: 1px solid #d1d5db;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 0.15rem rgba(195, 36, 32, 0.25);
+        }
+
+        .btn-submit {
+            background-color: var(--accent-gold);
+            border: none;
+            color: #fff;
+            padding: 0.85rem 2.5rem;
+            border-radius: 999px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: 0.25s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background-color: #a21c19;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+        }
+
+        /* MAP */
+        .map-section {
+            background: var(--accent-cream);
+            padding: 4rem 0;
+        }
+
+        .map-container {
+            height: 350px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--primary-dark);
+            color: #e5e7eb;
+            padding: 3.5rem 0 2.4rem 0;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #f9fafb;
+        }
+
+        .footer p {
+            color: #cbd5f5;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a {
+            display: block;
+            color: #cbd5f5;
+            font-size: 0.93rem;
+            margin-bottom: 0.35rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-icons a {
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            margin-right: 0.45rem;
+            font-size: 0.9rem;
+            color: #e5e7eb;
+            transition: all 0.25s;
+        }
+
+        .social-icons a:hover {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(148, 163, 184, 0.4);
+            margin-top: 2rem;
+            padding-top: 1.2rem;
+            text-align: center;
+            font-size: 0.88rem;
+            color: #9ca3af;
+        }
+
+        /* ANIMATIONS */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero-section {
+                padding-top: 130px;
+                padding-bottom: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/img/logo.png" alt="Divine Endowments Logo">
+            </a>
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/about.html">About</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="../pages/gallery.html">Collections</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../pages/contact.html">Contact</a>
+                    </li>
+    
+                    <!-- CART -->
+                    <li class="nav-item ms-2">
+                        <a class="nav-link cart-icon" href="#">
+                            <i class="fas fa-shopping-bag"></i>
+                            <span class="cart-count">3</span>
+                        </a>
+                    </li>
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="reveal in-view">Contact Us</h1>
+            <p class="reveal in-view" style="max-width: 720px; margin-top: .8rem;">
+                We’re here to help you look your best. Reach out to any of our stores or send us a message and our team
+                will respond as soon as possible.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="contact-wrapper">
+        <div class="container">
+
+            <h2 class="section-title reveal">Store Locations & Support</h2>
+            <p class="section-subtitle reveal">
+                Visit any of our outlets or contact us through phone, email or live chat.
+            </p>
+
+            <div class="row g-4 mb-5">
+                <!-- Abuja -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-store"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Abuja Store</h4>
+                                <small class="text-muted">Wuse II, Abuja</small>
+                            </div>
+                        </div>
+                        <p>Suite 006, Ground Floor, Obum Place,<br>16 Adetokunbo Ademola Cres, Wuse II.</p>
+                        <p class="contact-phone">0809 933 3302</p>
+                    </div>
+                </div>
+
+                <!-- Ready to wear -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-shirt"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Ready-to-Wear Store</h4>
+                                <small class="text-muted">Ikeja, Lagos</small>
+                            </div>
+                        </div>
+                        <p>30c Opebi Road, Ikeja, Lagos.</p>
+                        <p class="contact-phone">0814 700 6000</p>
+                    </div>
+                </div>
+
+                <!-- MMIA -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-plane-departure"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Duty Free Shop</h4>
+                                <small class="text-muted">Lagos Intl. Airport (MMIA)</small>
+                            </div>
+                        </div>
+                        <p>Duty Free Shop, Lagos International Airport (MMIA).</p>
+                        <p class="contact-phone">0809 903 3335</p>
+                    </div>
+                </div>
+
+                <!-- GAT -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Local Airport GAT</h4>
+                                <small class="text-muted">Departure Hall, Lagos</small>
+                            </div>
+                        </div>
+                        <p>Departure Hall, Local Airport GAT, Lagos.</p>
+                        <p class="contact-phone">0809 903 3337</p>
+                    </div>
+                </div>
+
+                <!-- Abuja Airport -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Abuja Intl. Airport</h4>
+                                <small class="text-muted">Duty Free Shop</small>
+                            </div>
+                        </div>
+                        <p>Duty Free Shop, Abuja International Airport.</p>
+                        <p class="contact-phone">0809 933 3301</p>
+                    </div>
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="contact-icon"
+                                style="background:rgba(195,36,32,0.08); color:var(--accent-gold);">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Email Support</h4>
+                                <small class="text-muted">Send us a mail</small>
+                            </div>
+                        </div>
+                        <p>info@divineendowments.com</p>
+                        <p>divineendowments@yahoo.com</p>
+                    </div>
+                </div>
+
+            
+        </div>
+    </section>
+    
+    <!-- CONTACT FORM + LIVE SUPPORT + MAP -->
+    <section class="contact-wrapper"
+        style="background: linear-gradient(rgba(4,147,133,0.92), rgba(4,147,133,0.92)); padding: 5rem 0;">
+        <div class="container">
+    
+            <h2 class="section-title reveal" style="color: #fff;">Get in Touch</h2>
+            <p class="section-subtitle reveal" style="color: #e5fffa;">
+                Reach out through our message form or locate us easily on the map.
+            </p>
+    
+            <div class="row g-4 align-items-start mt-4">
+    
+                <!-- FORM (LEFT) -->
+                <div class="col-lg-6 reveal">
+                    <div class="contact-form-card h-100" style="background: #fff;">
+                        <h3 class="mb-3">Send Us a Message</h3>
+                        <p class="text-muted mb-4">
+                            Fill out this form and our support team will get back to you shortly.
+                        </p>
+    
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your message (optional)"></textarea>
+                            </div>
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+    
+                <!-- LIVE SUPPORT + MAP (RIGHT SIDE STACK) -->
+                <div class="col-lg-6 reveal">
+    
+                    <!-- LIVE SUPPORT CARD -->
+                    <div class="contact-card mb-4" style="background: #fff;">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="contact-icon" style="background:rgba(249,115,22,0.12); color:#f97316;">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-0">Live Support</h4>
+                                <small class="text-muted">Real-time assistance</small>
+                            </div>
+                        </div>
+                        <p>Chat with our team via live chat.</p>
+                        <a href="https://www.livechat.com" target="_blank" class="btn btn-sm btn-dark">
+                            Start Live Chat
+                        </a>
+                    </div>
+    
+                    <!-- MAP -->
+                    <div class="map-container" style="height: 380px; border:8px solid #fff; border-radius:16px;">
+                        <iframe width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen
+                            src="https://www.google.com/maps?q=30c%20Opebi%20Road,%20Ikeja,%20Lagos,%20Nigeria&output=embed">
+                        </iframe>
+                    </div>
+
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h3 class="footer-title">Divine Endowments</h3>
+                    <p>
+                        In-store and online retailer of African designer gowns, kaftans, blouses, trousers and more –
+                        delivering fitting at its very best in bespoke and ready-to-wear garments.
+                    </p>
+                    <div class="social-icons mt-4">
+                        <!-- Replace with real links -->
+                        <a href="https://www.instagram.com/divineendowments/" target="_blank"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/DivineendowmentsNG/" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/Divineendowment" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+    
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Shop</h4>
+                    <ul class="footer-links">
+                        <li><a href="#shop">All Products</a></li>
+                        <li><a href="#collections">Men’s Wears</a></li>
+                        <li><a href="#collections">Women’s Wears</a></li>
+                        <li><a href="#collections">Gowns & Dresses</a></li>
+                        <li><a href="#collections">Kaftans & Native</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h4 class="footer-title">Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="#story">About Us</a></li>
+                        <li><a href="#">Owambe by Divine Endowments</a></li>
+                        <li><a href="#">Uniforms by Divine Endowments</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+    
+                <div class="col-lg-4 col-md-4">
+                    <h4 class="footer-title">Visit Our Stores</h4>
+                    <p>
+                        <strong>Head Office / Flagship Store</strong><br>
+                        33 Toyin Street (2nd Floor), Ikeja, Lagos, Nigeria.
+                    </p>
+                    <p class="mt-2">
+                        <strong>Airport Locations</strong><br>
+                        Duty Free Shop – Lagos International Airport (MMA)<br>
+                        MMA2 & GAT Local Airport, Ikeja, Lagos.
+                    </p>
+                    <p class="mt-2">
+                        <strong>Contact</strong><br>
+                        info@divineendowments.com<br>
+                        0814 700 6000, 0818 414 1414, 0809 903 3337
+                    </p>
+                </div>
+            </div>
+    
+            <div class="copyright">
+                <p>&copy; 2025 Divine Endowments Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener("scroll", () => {
+            const nav = document.querySelector(".navbar");
+            nav.classList.toggle("scrolled", window.scrollY > 30);
+        });
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        reveals.forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
