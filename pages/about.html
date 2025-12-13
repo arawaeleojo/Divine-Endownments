@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine Endowments | About Us</title>
-
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" href="../assets/css/style.css">
     <style>
         :root {
             --primary-dark: #07130e;
@@ -50,113 +50,51 @@
             text-decoration: none;
         }
 
-        /* Navigation */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 1.2rem 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 0.8rem 0;
-            background-color: rgba(218, 218, 218, 0.98);
-        }
-
-        .navbar-brand img {
-            height: 60px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: var(--text-dark) !important;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-gold) !important;
-        }
-        /* ACTIVE & HOVER UNDERLINE */
-        .navbar .nav-link {
-            position: relative;
-            padding-bottom: 6px;
-        }
-
-        .navbar .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0%;
-            height: 2px;
-            background-color: var(--accent-gold);
-            transition: width 0.3s ease-in-out;
-        }
-
-        .navbar .nav-link:hover::after,
-        .navbar .nav-link.active::after {
-            width: 100%;
-        }
-
-        .cart-icon {
-            position: relative;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--accent-gold);
-            color: white;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         /* HERO */
         .hero {
-            padding-top: 150px;
-            padding-bottom: 150px;
-            background: radial-gradient(circle at top left, rgba(4, 147, 133, 0.3), transparent 50%),
-                linear-gradient(rgba(7, 19, 14, 0.78), rgba(7, 19, 14, 0.78)),
-                url("../assets/img/hero2.png");
+            padding: 200px 0;
+            height: 98vh;
+            background: linear-gradient(rgba(7, 19, 14, 0.7), rgba(7, 19, 14, 0.7)),
+                url('../assets/img/hero2.png');
             background-size: cover;
             background-position: center;
             color: #fff;
             text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: "";
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            top: -80px;
-            right: -40px;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.8rem;
             font-weight: 600;
         }
 
         .hero p {
-            max-width: 800px;
-            margin: 0.9rem auto 0;
-            color: #f1f5f9;
+            margin-top: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2rem;
+            line-height: 1.5;
         }
 
-        .hero-btn {
-            margin-top: 2rem;
+        .section-title {
+            text-align: center;
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.6rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            width: 60px;
+            height: 3px;
+            background: var(--accent-gold);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .btn-gold {
@@ -307,66 +245,14 @@
         ul li {
             margin-bottom: 8px;
         }
-
-         /* FOOTER */
-        .footer {
-            background: var(--primary-dark);
-            color: #e5e7eb;
-            padding: 3.5rem 0 2.4rem 0;
+        .management-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
-        .footer-title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #f9fafb;
-        }
 
-        .footer p {
-            color: #cbd5f5;
-            font-size: 0.95rem;
-        }
 
-        .footer-links a {
-            display: block;
-            color: #cbd5f5;
-            font-size: 0.93rem;
-            margin-bottom: 0.35rem;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .social-icons a {
-            width: 36px;
-            height: 36px;
-            border-radius: 999px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(148, 163, 184, 0.7);
-            margin-right: 0.45rem;
-            font-size: 0.9rem;
-            color: #e5e7eb;
-            transition: all 0.25s;
-        }
-
-        .social-icons a:hover {
-            background: var(--accent-gold);
-            border-color: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(148, 163, 184, 0.4);
-            margin-top: 2rem;
-            padding-top: 1.2rem;
-            text-align: center;
-            font-size: 0.88rem;
-            color: #9ca3af;
-        }
 
         @media (max-width: 768px) {
             .hero h1 {
@@ -416,7 +302,7 @@
                     <li class="nav-item ms-2">
                         <a class="nav-link cart-icon" href="#">
                             <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count">3</span>
+                            <span class="cart-count">0</span>
                         </a>
                     </li>
     
@@ -424,22 +310,49 @@
             </div>
         </div>
     </nav>
+    <!-- CART SIDEBAR -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h4>Your Cart</h4>
+            <button id="closeCart" class="close-cart">&times;</button>
+        </div>
+    
+        <div id="cartItems" class="cart-items">
+            <!-- JS will append cart items here -->
+        </div>
+    
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotal">₦0</strong>
+            </div>
+            <button class="btn btn-dark w-100 mt-3 btn-order-now">Order Now</button>
+    
+        </div>
+    </div>
+    
+    <!-- BACKDROP OVERLAY -->
+    <div id="cartOverlay" class="cart-overlay"></div>
 
+ 
 
-    <!-- HERO -->
-    <header class="hero">
-        <div class="container">
-            <h1 class="reveal fade-up in-view">Discover the Art of Dressing</h1>
-            <p class="reveal fade-up in-view" style="animation-delay:.1s">
-                Where every stitch tells a story and every outfit paints a picture. Divine Endowments Limited is one of
-                the leading and fastest-growing fashion houses in Nigeria, with the mission to deliver fitting at its
-                very best in bespoke and ready to wear garments.
-            </p>
-            <div class="hero-btn reveal fade-up in-view" style="animation-delay:.2s">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+    
+        <div class="container hero-content">
+                <div>
+                    <h1 class="hero-title">Discover the Art of Dressing</h1>
+                    <p class="hero-subtitle">
+                        Where every stitch tells a story and every outfit paints a picture. Divine Endowments Limited is one of
+                        the leading and fastest-growing fashion houses in Nigeria, with the mission to deliver fitting at its
+                        very best in bespoke and ready to wear garments.
+                    </p>
                 <a href="index.html#shop" class="btn btn-gold">Explore Our Collections</a>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- ABOUT (SUMMARY + 1998) -->
     <section class="section-white">
@@ -469,7 +382,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 reveal fade-right">
-                    <img src="../assets/img/gal1.PNG"
+                    <img src="../assets/img/gallery/A0104.jpg"
                         class="img-fluid img-soft" alt="African fashion">
                 </div>
             </div>
@@ -555,7 +468,7 @@
                     </p>
                 </div>
                 <div class="col-lg-5 reveal fade-right">
-                    <img src="../assets/img/gal3.PNG"
+                    <img src="../assets/img/gallery/A0041.jpg"
                         class="img-fluid img-soft" alt="Tailored fit">
                 </div>
             </div>
@@ -588,7 +501,7 @@
                     </p>
                 </div>
                 <div class="col-lg-6 reveal fade-right">
-                    <img src="../assets/img/gal4.PNG"
+                    <img src="../assets/img/gallery/A0086.jpg"
                         class="img-fluid img-soft" alt="Team & culture">
                 </div>
             </div>
@@ -639,7 +552,7 @@
                     </p>
                 </div>
                 <div class="col-lg-5 reveal fade-right">
-                    <img src="../assets/img/gal5.PNG"
+                    <img src="../assets/img/gallery/A0061.jpg"
                         class="img-fluid img-soft" alt="Factory and operations">
                 </div>
             </div>
@@ -695,39 +608,44 @@
     <section class="section-white">
         <div class="container">
             <h2 class="section-title reveal fade-up">Our Products</h2>
+
             <div class="row g-5 align-items-center">
+
+                <!-- TEXT COLUMN -->
                 <div class="col-lg-6 reveal fade-left">
                     <p>
-                        Basically, we are into the business of making clothes that enhances ones beauty and production
-                        of
-                        garment that suits any occasion or event. Our ready-to-wear section is fundamentally structured
-                        to
-                        make commercial but trendy attires that are affordable and fashionable using local fabrics to
-                        allow
-                        one to express ones inner beauty in the most effective manner.
+                        We are in the business of creating garments that enhance individuality and confidence. Our designs
+                        are crafted to suit every occasion — blending modern silhouettes with African heritage.
                     </p>
+
                     <p>
-                        Our clothes and designs are fashioned after UK sizes for universal fitting and to allow for
-                        hitch
-                        free patronage from local and international customers. In the recent fashion trend, our local
-                        fabrics are well sorted after in the western world, therefore, Divine Endowments, as an epitome
-                        of
-                        Nigerian culture, maintains a universal size standard that enables shoppers alike to purchase
-                        clothes off the rack, without the need to fit the garments; provided they know their UK sizes.
+                        Our ready-to-wear collections are structured for affordability without compromising style. Each
+                        piece is designed using carefully selected local fabrics, allowing wearers to express elegance
+                        effortlessly.
                     </p>
-                </div>
-                <div class="col-lg-6 reveal fade-right">
-                    <ul>
-                        <li>Casuals: Blouses, T-Shirts, Jeans, Dresses</li>
-                        <li>Formal Wear: Skirt Suits, Trouser Suits for male and female</li>
-                        <li>Traditional Wears: Boubou, Skirt &amp; Blouse, Agbada &amp; Smart Buba for men</li>
-                        <li>Occasional Wears: For dinner outings and the likes</li>
+
+                    <p>
+                        Our garments follow UK sizing standards, ensuring universal fitting and seamless shopping for both
+                        local and international customers.
+                    </p>
+
+                    <ul class="mt-3">
+                        <li><strong>Casuals:</strong> Blouses, T-Shirts, Jeans, Dresses</li>
+                        <li><strong>Formal Wear:</strong> Skirt suits, trouser suits</li>
+                        <li><strong>Traditional Wear:</strong> Boubou, Agbada, Buba</li>
+                        <li><strong>Occasional Wear:</strong> Dinner outings & special events</li>
                     </ul>
-                    <img src="../assets/img/gal6.PNG"
-                        class="img-fluid img-soft mt-3" alt="Range of products">
                 </div>
+
+                <!-- IMAGE COLUMN (STANDS ALONE) -->
+                <div class="col-lg-6 reveal fade-right">
+                    <img src="../assets/img/gallery/A0040.jpg" alt="Divine Endowments product range" class="img-fluid img-soft">
+                </div>
+
             </div>
         </div>
+    </section>
+
 
     <!-- KEY TO SUCCESS + SUB BRAND + CLIENTELE -->
     <section class="section-grey">
@@ -788,7 +706,7 @@
                     </div>
                 </div>
                 <div class="col-lg-5 reveal fade-right">
-                    <img src="../assets/img/gal7.PNG"
+                    <img src="../assets/img/gallery/A0196.jpg"
                         class="img-fluid img-soft" alt="Clientele">
                 </div>
             </div>
@@ -799,56 +717,81 @@
     <section class="section-green">
         <div class="container">
             <h2 class="section-title text-white reveal fade-up">Management Structure</h2>
-
-            <div class="row g-4">
-                <div class="col-md-5 reveal fade-left">
-                    <div class="lux-card hover-lift">
+    
+            <!-- ROW 1: Managing Director + Image IN SAME CARD -->
+            <div class="lux-card hover-lift p-4 mb-5 reveal fade-up">
+            
+                <div class="row g-4 align-items-center">
+            
+                    <!-- Managing Director -->
+                    <div class="col-md-6">
                         <h4>Managing Director</h4>
                         <p class="mt-3">
                             <strong>Dr. Mrs Abiola Ayeni</strong><br>
                             Divine Endowments is being owned and managed by Dr. Mrs. Abiola Ayeni, a Barrister at law
-                            since
-                            1991. As a creative person from her tender age, her quest for designing precedes her
-                            decision to
-                            study law. She started from a single sewing machine, to daring creative sketches with a lot
-                            of
-                            perseverance. Her flair for art and creativity led her to establish Divine Endowments.
+                            since 1991. As a creative person from her tender age, her quest for designing precedes her
+                            decision to study law. She started from a single sewing machine, to daring creative sketches
+                            with a lot of perseverance. Her flair for art and creativity led her to establish Divine
+                            Endowments.
                         </p>
                     </div>
+            
+                    <!-- Image Column (inside same white card) -->
+                    <div class="col-md-6">
+                        <div class="management-image"
+                            style="height: 350px; background: url('../assets/img/gallery/A0161.jpg') center/cover no-repeat; border-radius: 10px;">
+                        </div>
+                    </div>
+            
                 </div>
+            
+            </div>
 
-                <div class="col-md-7 row reveal fade-right">
+    
+            <!-- ROW 2: Management Team + Board of Directors -->
+            <div class="row g-4">
+    
+                <!-- Management Team -->
+                <div class="col-md-6 reveal fade-left">
                     <div class="lux-card hover-lift">
                         <h4>Management Team</h4>
                         <ul class="mt-3">
                             <li>Mr. Akinlara Babalola</li>
-                            <li>Mrs. Lara kasali</li>
+                            <li>Mrs. Lara Kasali</li>
                             <li>Mr Mahmoud Lawal</li>
                             <li>Mrs. Bimbo Adebanwo</li>
                         </ul>
-
-                        <h4 class="mt-4">Board of Directors</h4>
-                        <ul>
+                    </div>
+                </div>
+    
+                <!-- Board of Directors -->
+                <div class="col-md-6 reveal fade-right">
+                    <div class="lux-card hover-lift">
+                        <h4>Board of Directors</h4>
+                        <ul class="mt-3">
                             <li>Dr. Mrs Abiola Ayeni</li>
                             <li>Mrs. Yinka Alo</li>
                             <li>Mrs. Abimbola Adebanwo</li>
                             <li>Ms. Abolaji Ayeni</li>
                             <li>Ms. Remi Yusuf</li>
                             <li>Mr. Tunde Ayeni</li>
-                            <li>Mr Adedayo Oduyemi</li>
+                            <li>Mr. Adedayo Oduyemi</li>
                         </ul>
                     </div>
                 </div>
+    
             </div>
+    
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="footer" id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="footer-title">Divine Endowments</h3>
+                    <h3 class="footer-title"><img src="../assets/img/logo.png" alt="logo" class="footer-logo"></h3>
                     <p>
                         In-store and online retailer of African designer gowns, kaftans, blouses, trousers and more –
                         delivering fitting at its very best in bespoke and ready-to-wear garments.
@@ -912,7 +855,7 @@
 
     <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="../assets/js/script.js"></script>
     <script>
         // Navbar scroll effect
         window.addEventListener("scroll", () => {

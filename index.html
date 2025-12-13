@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Divine Endowments | African Ready-to-Wear & Bespoke Fashion</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -13,520 +14,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
-    <!-- Outfit font -->
+    <!-- Outfit font -->   
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --primary-dark: #07130e;
-            --primary-green: #049385;
-            --accent-gold: #C32420;
-            --accent-cream: #f8f5f0;
-            --text-dark: #1a1a1a;
-            --text-light: #6c757d;
-        }
+    <link rel="stylesheet" href="assets/css/style.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-dark);
-            overflow-x: hidden;
-            background-color: #fff;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-            font-family: 'Outfit', serif;
-            font-weight: 300;
-        }
-
-        /* Navigation */
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.98);
-            padding: 1.2rem 0;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 0.8rem 0;
-            background-color: rgba(218, 218, 218, 0.98);
-        }
-
-        .navbar-brand img {
-            height: 60px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: var(--text-dark) !important;
-            margin: 0 0.5rem;
-            transition: color 0.3s;
-        }
-
-        .nav-link:hover {
-            color: var(--accent-gold) !important;
-        }
-        /* ACTIVE & HOVER UNDERLINE */
-        .navbar .nav-link {
-            position: relative;
-            padding-bottom: 6px;
-        }
-
-        .navbar .nav-link::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0%;
-            height: 2px;
-            background-color: var(--accent-gold);
-            transition: width 0.3s ease-in-out;
-        }
-
-        .navbar .nav-link:hover::after,
-        .navbar .nav-link.active::after {
-            width: 100%;
-        }
-
-        .cart-icon {
-            position: relative;
-        }
-
-        .cart-count {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background-color: var(--accent-gold);
-            color: white;
-            border-radius: 50%;
-            width: 18px;
-            height: 18px;
-            font-size: 0.7rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Hero Section */
-        .hero-section {
-            padding-top: 120px; /* Adjust between 90px – 140px if needed */
-            height: 100vh;
-            background: linear-gradient(rgba(7, 19, 14, 0.8), rgba(7, 19, 14, 0.6)),
-                /* TODO: Replace this with a key hero image from your site, e.g. a storefront or model shot */
-                url('assets/img/hero4.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            display: flex;
-            align-items: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            opacity: 0;
-            animation: fadeInUp 1s 0.3s forwards;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 650px;
-            opacity: 0;
-            animation: fadeInUp 1s 0.6s forwards;
-        }
-
-        .btn-gold {
-            background-color: var(--accent-gold);
-            color: white;
-            border: none;
-            padding: 0.9rem 2.5rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border-radius: 0;
-            transition: all 0.3s;
-            opacity: 0;
-            animation: fadeInUp 1s 0.9s forwards;
-        }
-
-        .btn-gold:hover {
-            background-color: #a21c19;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Floating Elements Animation */
-        .floating-element {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(201, 168, 106, 0.1);
-            z-index: 1;
-        }
-
-        .floating-1 {
-            width: 80px;
-            height: 80px;
-            top: 20%;
-            left: 10%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-2 {
-            width: 120px;
-            height: 120px;
-            bottom: 15%;
-            right: 10%;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        /* Brand Philosophy */
-        .philosophy-section {
-            padding: 6rem 0;
-            background-color: var(--accent-cream);
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            margin-bottom: 3rem;
-            position: relative;
-            text-align: center;
-            display: block; /* changed from inline-block */
-            width: 100%;
-        }
-
-        .section-title:after {
-            content: '';
-            position: absolute;
-            width: 60px; /* fixed width to center perfectly */
-            height: 3px;
-            background-color: var(--accent-gold);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%); /* centers the underline */
-        }
-
-
-        .philosophy-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-light);
-        }
-
-        .philosophy-image {
-            height: 600px;
-            /* TODO: Replace this with a real Divine Endowments campaign / store image */
-            background: url('assets/img/gal2.PNG');
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.5s;
-        }
-
-        .philosophy-image:hover {
-            transform: scale(1.03);
-        }
-
-        /* Featured Collections */
-        .collections-section {
-            padding: 6rem 0;
-        }
-
-        .collection-card {
-            height: 500px;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 30px;
-            cursor: pointer;
-        }
-
-        .collection-image {
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.7s;
-        }
-
-        .collection-card:hover .collection-image {
-            transform: scale(1.1);
-        }
-
-        .collection-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(7, 19, 14, 0.95), transparent);
-            color: white;
-            padding: 2rem;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: all 0.5s;
-        }
-
-        .collection-card:hover .collection-overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
-        .collection-title {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Product Showcase */
-        .product-showcase {
-            padding: 5rem 0;
-            background-color: #f9f9f9;
-        }
-
-        .product-card {
-            background: white;
-            overflow: hidden;
-            transition: all 0.3s;
-            height: 100%;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .product-image {
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: var(--primary-green);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
-
-        .product-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-price {
-            font-weight: 600;
-            color: var(--primary-green);
-            font-size: 1.1rem;
-        }
-
-        /* Lookbook */
-        .lookbook-section {
-            padding: 6rem 0;
-            background-color: var(--primary-dark);
-            color: white;
-        }
-
-        .lookbook-slider {
-            position: relative;
-            height: 500px;
-            overflow: hidden;
-        }
-
-        .lookbook-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .lookbook-slide.active {
-            opacity: 1;
-        }
-
-        .lookbook-controls {
-            position: absolute;
-            bottom: 20px;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            z-index: 10;
-        }
-
-        .lookbook-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .lookbook-dot.active {
-            background-color: var(--accent-gold);
-        }
-
-        /* Newsletter */
-        .newsletter-section {
-            padding: 5rem 0;
-            background-color: var(--accent-cream);
-        }
-
-        .newsletter-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-control-custom {
-            border-radius: 0;
-            border: 1px solid #ddd;
-            padding: 0.9rem 1.2rem;
-            font-size: 1rem;
-        }
-
-        .form-control-custom:focus {
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 0 0.2rem rgba(201, 168, 106, 0.25);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-title {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-cream);
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-
-        .footer-links a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-gold);
-        }
-
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            margin-right: 10px;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .social-icons a:hover {
-            background-color: var(--accent-gold);
-            transform: translateY(-3px);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #aaa;
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 3.5rem;
-            }
-
-            .collection-card {
-                height: 400px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.8rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .philosophy-image {
-                height: 300px;
-                margin-top: 2rem;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -564,7 +56,7 @@
                     <li class="nav-item ms-2">
                         <a class="nav-link cart-icon" href="#">
                             <i class="fas fa-shopping-bag"></i>
-                            <span class="cart-count">3</span>
+                            <span class="cart-count">0</span>
                         </a>
                     </li>
     
@@ -572,6 +64,30 @@
             </div>
         </div>
     </nav>
+    
+    <!-- CART SIDEBAR -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h4>Your Cart</h4>
+            <button id="closeCart" class="close-cart">&times;</button>
+        </div>
+    
+        <div id="cartItems" class="cart-items">
+            <!-- JS will append cart items here -->
+        </div>
+    
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <strong id="cartTotal">₦0</strong>
+            </div>
+            <button class="btn btn-dark w-100 mt-3 btn-order-now">Order Now</button>
+
+        </div>
+    </div>
+    
+    <!-- BACKDROP OVERLAY -->
+    <div id="cartOverlay" class="cart-overlay"></div>
 
     <!-- Hero Section -->
     <section class="hero-section">
@@ -604,13 +120,11 @@
                         with a clear mission: to deliver perfect fitting in bespoke and ready-to-wear garments for
                         today’s discerning customer. From our base in Ikeja and airport outlets, we serve clients who
                         want premium African fashion that feels as good as it looks.
-                        :contentReference[oaicite:0]{index=0}
                     </p>
                     <p class="philosophy-text mt-4">
                         We specialise in African designer gowns, kaftans, blouses, trousers and more for both men and
                         women. Every piece is crafted with attention to detail, neat finishing and quality fabrics,
                         whether you’re dressing for owambe, travel, the boardroom or casual days out.
-                        :contentReference[oaicite:1]{index=1}
                     </p>
                     <p class="philosophy-text mt-4">
                         Over the years, Divine Endowments has become a trusted name in Lagos and beyond, redefining
@@ -639,7 +153,7 @@
                     <div class="collection-card">
                         <!-- TODO: Replace with a real kaftan / senator look from your site -->
                         <div class="collection-image"
-                            style="background-image: url('assets/img/gal8.PNG')">
+                            style="background-image: url('assets/img/gallery/A0175.jpg')">
                         </div>
                         <div class="collection-overlay">
                             <h3 class="collection-title">Men’s Kaftans & Senator Wears</h3>
@@ -653,7 +167,7 @@
                     <div class="collection-card">
                         <!-- TODO: Replace with a real gown / dress image from Divine Endowments -->
                         <div class="collection-image"
-                            style="background-image: url('assets/img/gal1.PNG')">
+                            style="background-image: url('assets/img/gallery/A0105.jpg')">
                         </div>
                         <div class="collection-overlay">
                             <h3 class="collection-title">Women’s Gowns & Ready-Wear</h3>
@@ -681,7 +195,7 @@
                     <div class="product-card">
                         <!-- TODO: Replace with product image from your site -->
                         <div class="product-image"
-                            style="background-image: url('assets/img/gal8.PNG')">
+                            style="background-image: url('assets/img/gallery/A0175.jpg')">
                             <span class="product-badge">Bestseller</span>
                         </div>
                         <div class="product-info">
@@ -689,7 +203,7 @@
                             <p class="text-muted">Neatly tailored senator wear with clean lines and sharp finishing.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -700,7 +214,7 @@
                     <div class="product-card">
                         <!-- TODO: Replace with product image from your site -->
                         <div class="product-image"
-                            style="background-image: url('assets/img/gal2.PNG')">
+                            style="background-image: url('assets/img/gallery/A0145.jpg')">
                             <span class="product-badge">Customer Favourite</span>
                         </div>
                         <div class="product-info">
@@ -708,7 +222,7 @@
                             <p class="text-muted">Statement gown that turns heads at every owambe and special event.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                            <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -719,14 +233,14 @@
                     <div class="product-card">
                         <!-- TODO: Replace with product image from your site -->
                         <div class="product-image"
-                            style="background-image: url('assets/img/gal3.PNG')">
+                            style="background-image: url('assets/img/gallery/A0071.jpg')">
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Ladies Two-Piece Set</h3>
                             <p class="text-muted">Chic blouse and trouser combo for office, travel and weekends.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -737,14 +251,14 @@
                     <div class="product-card">
                         <!-- TODO: Replace with product image from your site -->
                         <div class="product-image"
-                            style="background-image: url('assets/img/gal6.PNG')">
+                            style="background-image: url('assets/img/gallery/A0134.jpg')">
                         </div>
                         <div class="product-info">
                             <h3 class="product-title">Agbada / Occasional Wear</h3>
                             <p class="text-muted">Grand pieces for weddings, ceremonies and high-profile outings.</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View Details</a>
+                            <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -769,15 +283,13 @@
                 <!-- Item 1 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal1.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0105.jpg');"></div>
                         <div class="product-info">
                             <h3 class="product-title">Ladies 2-Piece Set</h3>
                             <p class="text-muted">Premium tailoring</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -786,15 +298,13 @@
                 <!-- Item 2 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal2.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0176.jpg');"></div>
                         <div class="product-info">
                             <h3 class="product-title">Designer Gown</h3>
                             <p class="text-muted">Elegant African wear</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -803,15 +313,13 @@
                 <!-- Item 3 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal3.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0134.jpg');"></div>
                         <div class="product-info">
                             <h3 class="product-title">Men’s Senator</h3>
                             <p class="text-muted">Sharp and fitted</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -820,15 +328,13 @@
                 <!-- Item 4 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal4.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0086.jpg');"></div>
                         <div class="product-info">
                             <h3 class="product-title">Agbada Set</h3>
                             <p class="text-muted">Grand traditional wear</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -837,15 +343,13 @@
                 <!-- Item 5 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal5.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0080.jpg');"></div>
                         <div class="product-info">
-                            <h3 class="product-title">Men’s Kaftan</h3>
+                            <h3 class="product-title">Men’s Casual Wear</h3>
                             <p class="text-muted">Premium embroidery</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -854,15 +358,13 @@
                 <!-- Item 6 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal6.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0196.jpg');"></div>
                         <div class="product-info">
                             <h3 class="product-title">Ladies Dress</h3>
                             <p class="text-muted">Soft & flowing fabric</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -871,15 +373,13 @@
                 <!-- Item 7 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal7.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0156.jpg');"></div>
                         <div class="product-info">
                             <h3 class="product-title">2-Piece Men’s Set</h3>
                             <p class="text-muted">Simple & classy</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -888,15 +388,13 @@
                 <!-- Item 8 -->
                 <div class="col-md-4 col-lg-3">
                     <div class="product-card" style="background-color: white;">
-                        <div class="product-image"
-                            style="background-image: url('assets/img/gal8.PNG');">
-                        </div>
+                        <div class="product-image" style="background-image: url('assets/img/gallery/A0178.jpg');"></div>
                         <div class="product-info">
                             <h3 class="product-title">Elegant Gown</h3>
                             <p class="text-muted">For classy outings</p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
                                 <span class="product-price">₦ Contact for Price</span>
-                                <a href="#" class="btn btn-sm btn-outline-dark">View</a>
+                                <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark add-to-cart">Add</a>
                             </div>
                         </div>
                     </div>
@@ -905,6 +403,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Testimonial Section -->
     <section class="testimonial-section" style="padding: 6rem 0; background-color: #ffffff;">
@@ -975,6 +474,159 @@
         </div>
     </section>
 
+    <section id="home-faq" class="faq-section py-5" style="background: #f8f5f0;">
+        <div class="container">
+
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+
+            <div class="faq-grid mt-4">
+
+                <!-- FIRST 6 FAQS -->
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq1">
+                        What is your return policy?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq1" class="faq-answer">
+                        We offer a hassle-free return policy. If you’re not satisfied with your purchase, you can return
+                        eligible items within 30 days of delivery for a full refund or exchange. Items must be unworn,
+                        unwashed, and in their original condition. Please refer to our Returns & Exchanges page for details.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq2">
+                        How do I track my order?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq2" class="faq-answer">
+                        Once your order has been processed and shipped, you will receive a confirmation message containing
+                        your tracking details so you can monitor your delivery.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq3">
+                        What payment methods do you accept?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq3" class="faq-answer">
+                        We accept secure online payments, bank transfers, and debit card payments. All transactions are
+                        processed safely.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq4">
+                        Do you offer international shipping?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq4" class="faq-answer">
+                        Yes, we offer international shipping to selected countries. Shipping fees and delivery timelines
+                        vary based on location.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq5">
+                        How can I contact your customer support?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq5" class="faq-answer">
+                        You can reach our customer support team via phone, email, or WhatsApp. Visit our Contact page for
+                        full details.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq6">
+                        Are the sizes true to measurements?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq6" class="faq-answer">
+                        Yes, our sizes follow standard UK measurements. We recommend checking our size guide or contacting
+                        us if you need assistance choosing the right fit.
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXTRA FAQS (HIDDEN INITIALLY) -->
+            <div id="moreFaqs" class="faq-grid mt-4" style="display:none;">
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq7">
+                        Can I modify or cancel my order after it’s been placed?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq7" class="faq-answer">
+                        Orders can only be modified or cancelled before processing begins. Once processing or shipping has
+                        started, changes may no longer be possible.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq8">
+                        Do you offer gift wrapping services?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq8" class="faq-answer">
+                        Yes, we offer gift wrapping services for a small additional fee. This option can be selected during
+                        checkout.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq9">
+                        Do you offer online ordering and shipping?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq9" class="faq-answer">
+                        Yes, you can place orders online and have them shipped directly to your preferred address.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq10">
+                        Can I sign up for exclusive offers and updates?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq10" class="faq-answer">
+                        Yes, you can subscribe to our newsletter to receive updates on new arrivals, promotions, and
+                        exclusive offers.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq11">
+                        How do I create an account?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq11" class="faq-answer">
+                        Click on the Sign Up or Register option on our website, fill in your details, and follow the prompts
+                        to create an account.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" data-target="faq12">
+                        What if an item I want is out of stock?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div id="faq12" class="faq-answer">
+                        If an item is out of stock, please contact our support team to inquire about restocking timelines or
+                        available alternatives.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+                <button id="faqToggleBtn" class="btn btn-faq-toggle">See More</button>
+            </div>
+
+        </div>
+    </section>
+
 
     <!-- Newsletter -->
     <section class="newsletter-section">
@@ -1002,7 +654,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h3 class="footer-title">Divine Endowments</h3>
+                    <h3 class="footer-title"><img src="assets/img/logo.png" alt="logo" class="footer-logo"></h3>
                     <p>
                         In-store and online retailer of African designer gowns, kaftans, blouses, trousers and more –
                         delivering fitting at its very best in bespoke and ready-to-wear garments.
@@ -1066,96 +718,43 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="assets/js/script.js"></script>
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
+            /* -------------------------------------------
+            FAQ ACCORDION + SEE MORE
+        ------------------------------------------- */
+                const faqButtons = document.querySelectorAll(".faq-question");
 
-        // Lookbook slider
-        const slides = document.querySelectorAll('.lookbook-slide');
-        const dots = document.querySelectorAll('.lookbook-dot');
-        let currentSlide = 0;
+                faqButtons.forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        const target = document.getElementById(btn.dataset.target);
 
-        function showSlide(n) {
-            // Reset all slides and dots
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
+                        document.querySelectorAll(".faq-answer").forEach(ans => {
+                            if (ans !== target) ans.style.display = "none";
+                        });
 
-            // Set new active slide and dot
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
+                        document.querySelectorAll(".faq-question").forEach(b => {
+                            if (b !== btn) b.classList.remove("active");
+                        });
 
-        // Add click events to dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-            });
-        });
+                        const isOpen = target.style.display === "block";
+                        target.style.display = isOpen ? "none" : "block";
+                        btn.classList.toggle("active", !isOpen);
+                    });
+                });
 
-        // Auto slide every 5 seconds
-        setInterval(() => {
-            showSlide(currentSlide + 1);
-        }, 5000);
+                const moreFaqs = document.getElementById("moreFaqs");
+                const toggleBtn = document.getElementById("faqToggleBtn");
+                let expanded = false;
 
-        // Newsletter form submission
-        document.getElementById('subscribeForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
+                toggleBtn.addEventListener("click", () => {
+                    expanded = !expanded;
+                    moreFaqs.style.display = expanded ? "grid" : "none";
+                    toggleBtn.innerText = expanded ? "Show Less" : "See More";
+                });
 
-            alert(`Thank you for subscribing with: ${email}\nWelcome to Divine Endowments!`);
-            this.reset();
-        });
-
-        // Add to cart animation
-        const addToCartButtons = document.querySelectorAll('.btn-outline-dark');
-        const cartCount = document.querySelector('.cart-count');
-
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                this.innerHTML = '<i class="fas fa-check me-2"></i>Added';
-                this.classList.remove('btn-outline-dark');
-                this.classList.add('btn-success');
-
-                let count = parseInt(cartCount.textContent);
-                cartCount.textContent = count + 1;
-
-                setTimeout(() => {
-                    this.innerHTML = 'View Details';
-                    this.classList.remove('btn-success');
-                    this.classList.add('btn-outline-dark');
-                }, 2000);
-            });
-        });
-
-        // Initialize animations on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.collection-card, .product-card').forEach(el => {
-            observer.observe(el);
-        });
     </script>
+    
 </body>
 
 </html>
