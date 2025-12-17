@@ -223,6 +223,75 @@
             object-fit: cover !important;    /* Ensures perfect equal height */
             display: block;
         }
+        /* ACCESSORIES EDITION – FULL BLEED */
+        .accessories-editorial {
+            width: 100%;
+            background: var(--primary-green);
+        }
+
+        /* LEFT IMAGE */
+        .accessories-image {
+            min-height: 520px;
+            background-size: cover;
+            background-position: center top;
+        }
+
+        /* RIGHT CONTENT */
+        .accessories-content {
+            display: flex;
+            align-items: center;
+            padding: 4rem 3.5rem;
+        }
+
+        .accessories-inner {
+            max-width: 480px;
+        }
+
+        .accessories-inner h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        .accessories-inner p {
+            margin-top: 1rem;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* IMAGE PREVIEWS */
+        .accessories-previews {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .accessory-thumb {
+            width: 220px;
+            height: 250px;
+        }
+
+        .accessory-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        /* MOBILE */
+        @media (max-width: 991px) {
+            .accessories-image {
+                min-height: 360px;
+            }
+
+            .accessories-content {
+                padding: 3rem 2rem;
+            }
+
+            .accessories-previews {
+                justify-content: center;
+            }
+        }
 
     </style>
 </head>
@@ -416,34 +485,39 @@
     </section>
 
 
-    <!-- Accessories Edition -->
-    <section class="sec-green text-white py-5">
-        <div class="container">
-            <h2 class="section-title">Accessories Edition</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="../assets/img/gal1.PNG"
-                        alt="Accessory 1">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/gal2.PNG"
-                        alt="Accessory 2">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/gal3.PNG"
-                        alt="Accessory 3">
-                    <div class="overlay"></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="../assets/img/gal4.PNG"
-                        alt="Accessory 4">
-                    <div class="overlay"></div>
+<!-- Accessories Edition (Editorial Split) -->
+<section class="accessories-editorial">
+    <div class="row g-0 align-items-stretch">
+
+        <!-- LEFT: FULL-BLEED IMAGE -->
+        <div class="col-lg-6 accessories-image" style="background-image:url('../assets/img/gallery/A0104.jpg');">
+        </div>
+
+        <!-- RIGHT: CONTENT -->
+        <div class="col-lg-6 accessories-content">
+            <div class="accessories-inner">
+                <h2>ACCESSORIES EDITION</h2>
+                <p>
+                    Elevate your style with our collection of timeless accessories,
+                    each piece designed to add a touch of elegance to your ensemble.
+                </p>
+
+                <!-- TWO IMAGE PREVIEWS -->
+                <div class="accessories-previews mt-4">
+                    <div class="accessory-thumb">
+                        <img src="../assets/img/gallery/A0118.jpg" alt="">
+                    </div>
+
+                    <div class="accessory-thumb">
+                        <img src="../assets/img/gallery/A0081.jpg" alt="">
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+
+    </div>
+</section>
+
 
     <!-- New Arrivals -->
     <section class="sec-light py-5" id="new-arrivals">
