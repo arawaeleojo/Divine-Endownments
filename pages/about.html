@@ -206,6 +206,17 @@
             opacity: 1;
             transform: translateX(0) translateY(0) scale(1);
         }
+        /* DISABLE REVEAL ANIMATIONS ON MOBILE */
+        @media (max-width: 768px) {
+            .reveal,
+            .reveal.fade-left,
+            .reveal.fade-right,
+            .reveal.zoom-in {
+                opacity: 1 !important;
+                transform: none !important;
+                transition: none !important;
+            }
+        }
 
         /* CARDS */
         .lux-card {
