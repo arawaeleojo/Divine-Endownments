@@ -395,10 +395,11 @@ h5 {
 
 .philosophy-image {
     height: 600px;
-    /* TODO: Replace this with a real Divine Endowments campaign / store image */
     background: url('../img/gallery/A0015.jpg');
-    background-size: cover;
-    background-position: center top;
+      background-size: contain;      /* SHOW FULL OUTFIT */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #f8f5f0;     /* soft neutral */
     transition: transform 0.5s;
 }
 
@@ -485,8 +486,10 @@ h5 {
 
 .product-image {
     height: 300px;
-    background-size: cover;
-    background-position: center top;
+    background-size: contain;      /* NO CROPPING */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #ffffff;
     position: relative;
 }
 
