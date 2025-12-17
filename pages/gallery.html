@@ -147,21 +147,29 @@
         }
         .btn-gold {
             background: var(--accent-gold);
+            padding: 0.85rem 2.2rem;
             color: #fff;
-            padding: 8px 18px;
-            border-radius: 4px;
-            transition: .3s;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .25s;
+            font-weight: 600;
+            border: none;
         }
+
         .btn-gold:hover {
-            background: #a31c18;
-            transform: translateY(-3px);
+            background: #a21c19;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
         }
         /* Uniform height for New Arrival images */
         .new-arrivals-img {
             height: 260px;
             width: 100%;
             object-fit: cover;
-            border-radius: 12px;
+            object-position: top center;
+            border-radius: 50px;
         }
         /* Fix overlay blocking the button */
         .gallery-item .overlay {
@@ -289,10 +297,14 @@
 
     <!-- HERO -->
     <header class="hero">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+
         <div class="container">
             <h1>Collections & Gallery</h1>
             <p>Explore our curated fashion collections — from this week’s highlights to accessories and new arrivals.
                 Each piece crafted to reflect essence, style and elegance.</p>
+            <a href="gallery.html#new-arrivals" class="btn btn-gold">Explore Our Collections</a>
         </div>
     </header>
 
@@ -434,7 +446,7 @@
     </section>
 
     <!-- New Arrivals -->
-    <section class="sec-light py-5">
+    <section class="sec-light py-5" id="new-arrivals">
         <div class="container">
             <h2 class="section-title">New Arrivals</h2>
 
@@ -653,7 +665,7 @@
     </section>
 
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="footer" id="contact">
         <div class="container">
             <div class="row">
@@ -672,48 +684,46 @@
                         <a href="https://x.com/Divineendowment" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
-    
+
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
                     <h4 class="footer-title">Shop</h4>
                     <ul class="footer-links">
-                        <li><a href="#shop">All Products</a></li>
-                        <li><a href="#collections">Men’s Wears</a></li>
-                        <li><a href="#collections">Women’s Wears</a></li>
-                        <li><a href="#collections">Gowns & Dresses</a></li>
-                        <li><a href="#collections">Kaftans & Native</a></li>
+                        <li><a href="gallery.html">All Products</a></li>
+                        <li><a href="gallery.html#new-arrivals">Men’s Wears</a></li>
+                        <li><a href="gallery.html#new-arrivals">Women’s Wears</a></li>
+                        <li><a href="gallery.html#new-arrivals">Gowns & Dresses</a></li>
+                        <li><a href="gallery.html#new-arrivals">Kaftans & Native</a></li>
                     </ul>
                 </div>
-    
+
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
                     <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#story">About Us</a></li>
-                        <li><a href="#">Owambe by Divine Endowments</a></li>
-                        <li><a href="#">Uniforms by Divine Endowments</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Collections</a></li>
+                        <li><a href="gallery.html">DE uniforms</a></li>
+                        <li><a href="../index.html#home-faq">FAQ</a></li>
                     </ul>
                 </div>
-    
+
                 <div class="col-lg-4 col-md-4">
                     <h4 class="footer-title">Visit Our Stores</h4>
                     <p>
                         <strong>Head Office / Flagship Store</strong><br>
-                        33 Toyin Street (2nd Floor), Ikeja, Lagos, Nigeria.
+                        381, Oba Akinjobi Way GRA ikeja
                     </p>
                     <p class="mt-2">
                         <strong>Airport Locations</strong><br>
-                        Duty Free Shop – Lagos International Airport (MMA)<br>
-                        MMA2 & GAT Local Airport, Ikeja, Lagos.
+                        Duty Free Shop – Abuja international airport<br>
                     </p>
                     <p class="mt-2">
                         <strong>Contact</strong><br>
                         info@divineendowments.com<br>
-                        0814 700 6000, 0818 414 1414, 0809 903 3337
+                        08034141414, 08024141414
                     </p>
                 </div>
             </div>
-    
+
             <div class="copyright">
                 <p>&copy; 2025 Divine Endowments Limited. All rights reserved.</p>
             </div>

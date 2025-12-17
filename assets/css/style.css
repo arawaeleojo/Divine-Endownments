@@ -454,6 +454,17 @@ h5 {
     margin-bottom: 0.5rem;
 }
 
+/* Fix testimonial avatar distortion */
+.testimonial-section img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;        /* prevents stretching */
+    object-position: center top;  /* centers face */
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
 /* Product Showcase */
 .product-showcase {
     padding: 5rem 0;

@@ -52,7 +52,7 @@
             padding: 200px 0;
             height: 98vh;
             background: linear-gradient(rgba(7, 19, 14, 0.7), rgba(7, 19, 14, 0.7)),
-                url('../assets/img/hero2.png');
+                url('../assets/img/hero6.png');
             background-size: cover;
             background-position: center;
             color: #fff;
@@ -73,7 +73,24 @@
             font-size: 1.2rem;
             line-height: 1.5;
         }
+        .btn-gold {
+            background: var(--accent-gold);
+            padding: 0.85rem 2.2rem;
+            color: #fff;
+            border-radius: 999px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: .25s;
+            font-weight: 600;
+            border: none;
+        }
 
+        .btn-gold:hover {
+            background: #a21c19;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+        }
         .section-title {
             text-align: center;
             font-family: 'Outfit', sans-serif;
@@ -394,28 +411,47 @@
     <!-- HERO -->
 
     <section class="hero">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+
         <div class="container">
             <h1 class="reveal in-view">Contact Us</h1>
             <p class="reveal in-view" style="max-width: 720px; margin-top: .8rem;">
                 We’re here to help you look your best. Reach out to any of our stores or send us a message and our team
                 will respond as soon as possible.
             </p>
+            <a href="gallery.html#new-arrivals" class="btn btn-gold">Explore Our Collections</a>
         </div>
     </section>
 
     <!-- CONTACT CONTENT -->
     <section class="contact-wrapper">
         <div class="container">
-    
+            
             <h2 class="section-title reveal">Store Locations & Support</h2>
             <p class="section-subtitle reveal">
                 Visit any of our outlets or reach us via phone, email, or live support.
             </p>
-    
+            
             <div class="row g-4 mt-4">
-    
-                <!-- Abuja -->
+                <!-- Abuja Airport -->
                 <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card cool-card">
+                        <div class="contact-head">
+                            <span class="contact-badge">Airport</span>
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-plane"></i>
+                            </div>
+                        </div>
+                        <h4>Abuja Intl. Airport</h4>
+                        <small>Duty Free Shop</small>
+                        <p class="contact-text">Duty Free Shop, Abuja International Airport.</p>
+                        <a href="tel:08099333301" class="contact-phone">0809 933 3301</a>
+                    </div>
+                </div>
+                
+                <!-- Abuja -->
+                <!-- <div class="col-md-6 col-lg-4 reveal">
                     <div class="contact-card cool-card">
                         <div class="contact-head">
                             <span class="contact-badge">Store</span>
@@ -431,7 +467,7 @@
                         </p>
                         <a href="tel:08099333302" class="contact-phone">0809 933 3302</a>
                     </div>
-                </div>
+                </div> -->
     
                 <!-- Ready to wear -->
                 <div class="col-md-6 col-lg-4 reveal">
@@ -481,22 +517,6 @@
                     </div>
                 </div>
     
-                <!-- Abuja Airport -->
-                <div class="col-md-6 col-lg-4 reveal">
-                    <div class="contact-card cool-card">
-                        <div class="contact-head">
-                            <span class="contact-badge">Airport</span>
-                            <div class="contact-icon">
-                                <i class="fa-solid fa-plane"></i>
-                            </div>
-                        </div>
-                        <h4>Abuja Intl. Airport</h4>
-                        <small>Duty Free Shop</small>
-                        <p class="contact-text">Duty Free Shop, Abuja International Airport.</p>
-                        <a href="tel:08099333301" class="contact-phone">0809 933 3301</a>
-                    </div>
-                </div>
-    
                 <!-- Email -->
                 <div class="col-md-6 col-lg-4 reveal">
                     <div class="contact-card cool-card highlight-card">
@@ -508,8 +528,24 @@
                         </div>
                         <h4>Email Support</h4>
                         <small>We reply promptly</small>
-                        <p class="contact-text">info@divineendowments.com</p>
-                        <p class="contact-text">divineendowments@yahoo.com</p>
+                        <p class="contact-text"><b>info@divineendowments.com</b></p>
+                        <p class="contact-text"><b>divineendowments@yahoo.com</b></p>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-6 col-lg-4 reveal">
+                    <div class="contact-card cool-card highlight-card">
+                        <div class="contact-head">
+                            <span class="contact-badge">Support</span>
+                            <div class="contact-icon email-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                        </div>
+                        <h4>Contact Support</h4>
+                        <small>We reply promptly</small>
+                        <p class="contact-text"><b>0802 414 1414</b></p>
+                        <p class="contact-text"><b>0803 414 1414</b></p>
                     </div>
                 </div>
     
@@ -579,8 +615,9 @@
                     <!-- MAP -->
                     <div class="map-container" style="height: 380px; border:8px solid #fff; border-radius:16px;">
                         <iframe width="100%" height="100%" style="border:0;" loading="lazy" allowfullscreen
-                            src="https://www.google.com/maps?q=30c%20Opebi%20Road,%20Ikeja,%20Lagos,%20Nigeria&output=embed">
+                            src="https://www.google.com/maps?q=381%20Oba%20Akinjobi%20Way,%20GRA%20Ikeja,%20Lagos,%20Nigeria&output=embed">
                         </iframe>
+
                     </div>
 
     
@@ -617,22 +654,21 @@
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
                     <h4 class="footer-title">Shop</h4>
                     <ul class="footer-links">
-                        <li><a href="#shop">All Products</a></li>
-                        <li><a href="#collections">Men’s Wears</a></li>
-                        <li><a href="#collections">Women’s Wears</a></li>
-                        <li><a href="#collections">Gowns & Dresses</a></li>
-                        <li><a href="#collections">Kaftans & Native</a></li>
+                        <li><a href="gallery.html">All Products</a></li>
+                        <li><a href="gallery.html#new-arrivals">Men’s Wears</a></li>
+                        <li><a href="gallery.html#new-arrivals">Women’s Wears</a></li>
+                        <li><a href="gallery.html#new-arrivals">Gowns & Dresses</a></li>
+                        <li><a href="gallery.html#new-arrivals">Kaftans & Native</a></li>
                     </ul>
                 </div>
     
                 <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
                     <h4 class="footer-title">Company</h4>
                     <ul class="footer-links">
-                        <li><a href="#story">About Us</a></li>
-                        <li><a href="#">Owambe by Divine Endowments</a></li>
-                        <li><a href="#">Uniforms by Divine Endowments</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Collections</a></li>
+                        <li><a href="gallery.html">DE uniforms</a></li>
+                        <li><a href="../index.html#home-faq">FAQ</a></li>
                     </ul>
                 </div>
     
@@ -640,17 +676,16 @@
                     <h4 class="footer-title">Visit Our Stores</h4>
                     <p>
                         <strong>Head Office / Flagship Store</strong><br>
-                        33 Toyin Street (2nd Floor), Ikeja, Lagos, Nigeria.
+                        381, Oba Akinjobi Way GRA ikeja
                     </p>
                     <p class="mt-2">
                         <strong>Airport Locations</strong><br>
-                        Duty Free Shop – Lagos International Airport (MMA)<br>
-                        MMA2 & GAT Local Airport, Ikeja, Lagos.
+                        Duty Free Shop – Abuja international airport<br>
                     </p>
                     <p class="mt-2">
                         <strong>Contact</strong><br>
                         info@divineendowments.com<br>
-                        0814 700 6000, 0818 414 1414, 0809 903 3337
+                        08034141414, 08024141414
                     </p>
                 </div>
             </div>
